@@ -8,7 +8,15 @@ async function messageDelay(message, delayTime){
 
 messageDelay('Have a  nice day' ,3000);
 
-  
+//or
+async function logMessage(message,delayTime){
+  await new Promise(resolve =>
+    setTimeout(resolve,delayTime));
+    console.log(message);
+}
+logMessage("be quick",1000);  
+
+
 
 
 async function getUserData(id){
@@ -20,12 +28,12 @@ async function getUserData(id){
   }
 
   function user(){
-    const id =[1,2,3,4,5,6,6,7,7,8,9,9];
+    const id =[1,2,3,4,5,6,7,8,9,10,11,12];
     for(let i=0; i>id.length;i++){
-      console.log(i);
+      console.log(id);
     }
   }
-  user("ID of users",);
+ console.log(user());
   
 
  
@@ -49,6 +57,8 @@ function checkPerformance() {
         });
 }
 checkPerformance();
+
+
 
 
 function unstableTask(taskName, failureProbability) {
@@ -84,3 +94,4 @@ function executeWithRetry(taskName,retries,faliureProbability){
          break
 }}
 executeWithRetry('ExampleTask', 0.3,0.9);
+
